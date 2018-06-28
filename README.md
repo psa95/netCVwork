@@ -33,3 +33,55 @@ $ npm start
 ```
 
 Once `npm start` is run and the server is started, on the host PC you can navigate to `localhost:8881` to find the web application.
+
+## Git
+
+To create a new branch
+```sh
+$ git checkout -b <branchname>
+```
+Always remember to create a new branch to edit the code.
+Never mess with the master branch.
+
+To display all the branches
+```sh
+$ git branch
+```
+
+To use a previous created branch
+```sh
+$ git checkout <branchname>
+```
+
+To push your work to the current branch
+
+To add all the files to the branch
+```sh
+$ git add .
+```
+To add only one file to the branch
+```sh
+$ git add <filename>
+```
+To commit to the branch
+```sh
+$ git commit -m "some meaningful message"
+```
+To push to the branch
+```sh
+$ git push origin <branchname>
+```
+
+If there are updates on the master branch
+Follow the below steps to update your branch
+
+```sh
+$ git fetch origin
+$ git merge origin/master
+```
+If there are any conflicts, resolve them in your code editor
+```sh
+$ git add .
+$ git commit -m "message"
+$ git push origin <branchname>
+```
