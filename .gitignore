@@ -5,3 +5,6 @@ npm-debug.log
 # Vagrant Files
 .vagrant
 ubuntu*
+
+# Webstorm
+.idea
