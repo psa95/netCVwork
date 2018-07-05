@@ -4,6 +4,8 @@ import './assets/css/bootstrap.min.css';
 import './assets/css/demo.css'
 import './assets/css/nucleo-icons.css'
 import './assets/css/paper-kit.css'
+import Background from './assets/img/darkbackground.png'
+import Logo from './assets/img/netCVlogo.png'
 
 class App extends Component {
   render() {
@@ -14,7 +16,7 @@ class App extends Component {
           <nav className="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="300">
               <div className="container">
                   <div className="navbar-translate">
-                      <a className="navbar-brand" href="https://www.creative-tim.com">netCVwork</a>
+                      <a className="navbar-brand"><img src={Logo} style={{height: 50,width: 250}}/></a>
                       <button className="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                           <span className="navbar-toggler-bar"></span>
                           <span className="navbar-toggler-bar"></span>
@@ -58,7 +60,7 @@ class App extends Component {
               </div>
           </nav>
 
-          <div className="page-header" data-parallax="true" style={{backgroundImage: 'assets/img/daniel-olahh.jpg'}}>
+          <div className="page-header" data-parallax="true" style={{backgroundImage: "url(" + Background + ")",}}>
               <div className="filter"></div>
               <div className="container">
                   <div className="motto text-center">
