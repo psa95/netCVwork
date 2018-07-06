@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './assets/css/bootstrap.min.css';
 import './assets/css/demo.css'
 import './assets/css/nucleo-icons.css'
@@ -11,8 +10,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
-          <body>
           <nav className="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="300">
               <div className="container">
                   <div className="navbar-translate">
@@ -26,31 +23,25 @@ class App extends Component {
                   <div className="collapse navbar-collapse" id="navbarToggler">
                       <ul className="navbar-nav ml-auto">
                           <li className="nav-item">
-                              <a href="../index.html" className="nav-link"><i className="nc-icon nc-layout-11"></i>Components</a>
-                          </li>
-                          <li className="nav-item">
-                              <a href="../documentation/tutorial-components.html" target="_blank" className="nav-link"><i className="nc-icon nc-book-bookmark"></i>  Documentation</a>
-                          </li>
-                          <li className="nav-item">
-                              <a className="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
+                              <a className="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="" target="_blank">
                                   <i className="fa fa-twitter"></i>
                                   <p className="d-lg-none">Twitter</p>
                               </a>
                           </li>
                           <li className="nav-item">
-                              <a className="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank">
+                              <a className="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="" target="_blank">
                                   <i className="fa fa-facebook-square"></i>
                                   <p className="d-lg-none">Facebook</p>
                               </a>
                           </li>
                           <li className="nav-item">
-                              <a className="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
+                              <a className="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="" target="_blank">
                                   <i className="fa fa-instagram"></i>
                                   <p className="d-lg-none">Instagram</p>
                               </a>
                           </li>
                           <li className="nav-item">
-                              <a className="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" href="https://www.github.com/CreativeTimOfficial" target="_blank">
+                              <a className="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" href="" target="_blank">
                                   <i className="fa fa-github"></i>
                                   <p className="d-lg-none">GitHub</p>
                               </a>
@@ -64,11 +55,11 @@ class App extends Component {
               <div className="filter"></div>
               <div className="container">
                   <div className="motto text-center">
-                      <h1>Example page</h1>
-                      <h3>Start designing your landing page here.</h3>
                       <br />
-                      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" className="btn btn-outline-neutral btn-round"><i className="fa fa-play"></i>Watch video</a>
-                      <button type="button" className="btn btn-outline-neutral btn-round">Download</button>
+                      <br />
+                      <h1>Redesign your CV</h1>
+                      <h3>Connecting the Future</h3>
+                      <br />
                   </div>
               </div>
           </div>
@@ -261,24 +252,14 @@ class App extends Component {
                   <div className="row">
                       <nav className="footer-nav">
                           <ul>
-                              <li><a href="https://www.creative-tim.com">Creative Tim</a></li>
-                              <li><a href="http://blog.creative-tim.com">Blog</a></li>
-                              <li><a href="https://www.creative-tim.com/license">Licenses</a></li>
+                              <li><a href="">Creative Tim</a></li>
+                              <li><a href="">Blog</a></li>
+                              <li><a href="">Licenses</a></li>
                           </ul>
                       </nav>
-                      <div className="credits ml-auto">
-					<span className="copyright">
-						© <script>document.write(new Date().getFullYear())</script>, made with <i className="fa fa-heart heart"></i> by Creative Tim
-					</span>
-                      </div>
                   </div>
               </div>
           </footer>
-          </body>
-
-
-
-
       </div>
     );
   }
