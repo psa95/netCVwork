@@ -29,10 +29,10 @@ Once the setup is done, we need to connect to the Vagrant server, navigate to th
 ```sh
 $ vagrant ssh
 $ cd /vagrant/
-$ npm start
+$ npm run-script start-local
 ```
 
-Once `npm start` is run and the server is started, on the host PC you can navigate to `localhost:8881` to find the web application.
+Once `npm run-script start-local` is run and the server is started, on the host PC you can navigate to `localhost:8881` to find the web application.
 
 ## Git
 
