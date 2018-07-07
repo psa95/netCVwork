@@ -12,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <nav className="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="300">
+          <nav className="navbar navbar-expand-lg fixed-top" color-on-scroll="300">
               <div className="container">
                   <div className="navbar-translate">
                       <a className="navbar-brand"><img src={Logo} style={{height: 50,width: 250}}/></a>
