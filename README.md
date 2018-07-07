@@ -23,6 +23,9 @@ Now, from inside the folder, run the following command:
 ```sh
 $ vagrant up
 ```
+
+***Note (Windows Users):*** Please run all commands pertaining to ***_Vagrant_*** in a Powershell window (with Administrator Privileges) to avoid any issues.
+
 The above command will create a new virtual instance for the application, and install all required system and node dependencies.
 Once the setup is done, we need to connect to the Vagrant server, navigate to the project, and start it.
 
