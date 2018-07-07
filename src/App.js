@@ -5,6 +5,8 @@ import './assets/css/nucleo-icons.css'
 import './assets/css/paper-kit.css'
 import Background from './assets/img/darkbackground.png'
 import Logo from './assets/img/netCVlogo.png'
+import SaarahPic from './assets/img/saarah.jpeg'
+import PrasadPic from './assets/img/prasadcopy.jpg'
 
 class App extends Component {
   render() {
@@ -136,13 +138,13 @@ class App extends Component {
                           <div className="col-md-4">
                               <div className="card card-profile card-plain">
                                   <div className="card-avatar">
-                                      <a href="#avatar"><img src="../assets/img/faces/clem-onojeghuo-3.jpg" alt="..."/></a>
+                                      <a href="#avatar"><img src={ PrasadPic } alt="..."/></a>
                                   </div>
                                   <div className="card-body">
                                       <a href="#paper-kit">
                                           <div className="author">
                                               <h4 className="card-title">Prasad Acharya</h4>
-                                              <h6 className="card-category">Developer</h6>
+                                              <h6 className="card-category">Junior Developer</h6>
                                           </div>
                                       </a>
                                       <p className="card-description text-center">
@@ -160,7 +162,7 @@ class App extends Component {
                           <div className="col-md-4">
                               <div className="card card-profile card-plain">
                                   <div className="card-avatar">
-                                      <a href="#avatar"><img src="../assets/img/faces/joe-gardner-2.jpg" alt="..."/></a>
+                                      <a href="#avatar"><img src={ SaarahPic } alt="..."/></a>
                                   </div>
                                   <div className="card-body">
                                       <a href="#paper-kit">
@@ -252,9 +254,9 @@ class App extends Component {
                   <div className="row">
                       <nav className="footer-nav">
                           <ul>
-                              <li><a href="">Creative Tim</a></li>
-                              <li><a href="">Blog</a></li>
-                              <li><a href="">Licenses</a></li>
+                              <li><a href=""></a></li>
+                              <li><a href=""></a></li>
+                              <li><a href=""></a></li>
                           </ul>
                       </nav>
                   </div>
