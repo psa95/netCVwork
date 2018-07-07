@@ -3,6 +3,8 @@ import './assets/css/bootstrap.min.css';
 import './assets/css/demo.css'
 import './assets/css/nucleo-icons.css'
 import './assets/css/paper-kit.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTwitter, faInstagram, faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons'
 import Background from './assets/img/darkbackground.png'
 import Logo from './assets/img/netCVlogo.png'
 import SaarahPic from './assets/img/saarah.jpeg'
@@ -26,25 +28,25 @@ class App extends Component {
                       <ul className="navbar-nav ml-auto">
                           <li className="nav-item">
                               <a className="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="" target="_blank">
-                                  <i className="fa fa-twitter"></i>
+                                  <FontAwesomeIcon icon={faTwitter} size="lg" color="white"/>
                                   <p className="d-lg-none">Twitter</p>
                               </a>
                           </li>
                           <li className="nav-item">
                               <a className="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="" target="_blank">
-                                  <i className="fa fa-facebook-square"></i>
+                                  <FontAwesomeIcon icon={faFacebook} size="lg" color="white"/>
                                   <p className="d-lg-none">Facebook</p>
                               </a>
                           </li>
                           <li className="nav-item">
                               <a className="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="" target="_blank">
-                                  <i className="fa fa-instagram"></i>
+                                  <FontAwesomeIcon icon={faInstagram} size="lg" color="white"/>
                                   <p className="d-lg-none">Instagram</p>
                               </a>
                           </li>
                           <li className="nav-item">
                               <a className="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" href="" target="_blank">
-                                  <i className="fa fa-github"></i>
+                                  <FontAwesomeIcon icon={faGithub} size="lg" color="white"/>
                                   <p className="d-lg-none">GitHub</p>
                               </a>
                           </li>
