@@ -9,29 +9,55 @@ import Background from './assets/img/darkbackground.png'
 import Logo from './assets/img/netCVlogo.png'
 import SaarahPic from './assets/img/saarah.jpeg'
 import PrasadPic from './assets/img/prasadcopy.jpg'
+import axios from 'axios';
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            contact: { name: '',
-                email: '',
-                message: ''
-                }
-        };
-
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         contact: { name: '',
+    //             email: '',
+    //             message: ''
+    //             }
+    //     };
+    //
+    //     this.handleChange = this.handleChange.bind(this);
+    //     this.handleSubmit = this.handleSubmit.bind(this);
+    // }
+    // handleChange (propertyName, event) {
+    //     const contact = this.state.contact;
+    //     contact[propertyName] = event.target.value;
+    //     this.setState({ contact: contact });
+    // }
+    //
+    // handleSubmit(event) {
+    //     alert('A name was submitted: ' + this.state.contact.name + 'email : ' + this.state.contact.email + 'message : ' + this.state.contact.message);
+    //     event.preventDefault();
+    // }
+    handleSubmit(e){
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        axios({
+            method: "POST",
+            url:"http://localhost:8881/send",
+            data: {
+                name: name,
+                email: email,
+                message: message
+            }
+        }).then((response)=>{
+            if (response.data.msg === 'success'){
+                alert("Message Sent.");
+                this.resetForm()
+            }else if(response.data.msg === 'fail'){
+                alert("Message failed to send.")
+            }
+        })
     }
-    handleChange (propertyName, event) {
-        const contact = this.state.contact;
-        contact[propertyName] = event.target.value;
-        this.setState({ contact: contact });
-    }
-
-    handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.contact.name + 'email : ' + this.state.contact.email + 'message : ' + this.state.contact.message);
-        event.preventDefault();
+    resetForm(){
+        document.getElementById('contact-form').reset();
     }
   render() {
     return (
@@ -304,7 +330,7 @@ class App extends Component {
                       <div className="row">
                           <div className="col-md-8 ml-auto mr-auto">
                               <h2 className="text-center">Keep in touch?</h2>
-                              <form className="contact-form" onSubmit={this.handleSubmit}>
+                              <form className="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
                                   <div className="row">
                                       <div className="col-md-6">
                                           <label>Name</label>
@@ -312,7 +338,7 @@ class App extends Component {
 	                                        <span className="input-group-addon">
 	                                            <i className="nc-icon nc-single-02"></i>
 	                                        </span>
-                                              <input type="text" className="form-control" placeholder="Name" value={this.state.contact.name} onChange={this.handleChange.bind(this, 'name')} />
+                                              <input type="text" className="form-control" placeholder="Name" id="name"/>
                                           </div>
                                       </div>
                                       <div className="col-md-6">
@@ -321,15 +347,15 @@ class App extends Component {
 											<span className="input-group-addon">
 												<i className="nc-icon nc-email-85"></i>
 											</span>
-                                              <input type="text" className="form-control" placeholder="Email" value={this.state.contact.email} onChange={this.handleChange.bind(this, 'email')}/>
+                                              <input type="text" className="form-control" placeholder="Email" id="email"/>
                                           </div>
                                       </div>
                                   </div>
                                   <label>Message</label>
-                                  <textarea className="form-control" rows="4" placeholder="Tell us your thoughts and feelings..." value={this.state.contact.message} onChange={this.handleChange.bind(this, 'message')}></textarea>
+                                  <textarea className="form-control" rows="4" placeholder="Tell us your thoughts and feelings..." id="message"></textarea>
                                   <div className="row">
                                       <div className="col-md-4 ml-auto mr-auto">
-                                          <button type="submit" value="Submit" className="btn btn-danger btn-lg btn-fill">Send Message</button>
+                                          <button type="submit" className="btn btn-danger btn-lg btn-fill">Send Message</button>
                                       </div>
                                   </div>
                               </form>
