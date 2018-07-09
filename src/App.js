@@ -73,9 +73,8 @@ class App extends Component {
                       <div className="row">
                           <div className="col-md-8 ml-auto mr-auto">
                               <h2 className="title">Job Seekers</h2>
-                              <h5 className="description">At netCVwork, job seekers are provided an easy to use environment for finding their future careers. If you're a job seeker, we provide you with a wide range of features which could peotentially help you to find the right job.</h5>
+                              <h5 className="description">At NetCVwork, job seekers are provided an easy to use environment for finding their future careers. If you're a job seeker, we provide you with a wide range of features which could potentially help you to find the right job.</h5>
                               <br/>
-                                  <a href="#paper-kit" className="btn btn-danger btn-round">See Details</a>
                           </div>
                       </div>
                       <br/><br/>
@@ -88,19 +87,6 @@ class App extends Component {
                                   <div className="description">
                                       <h4 className="info-title">CV Building</h4>
                                       <p className="description">Build your own custom CVs using our builder interface.</p>
-                                      <a href="#pkp" className="btn btn-link btn-danger">See more</a>
-                                  </div>
-                              </div>
-                          </div>
-                          <div className="col-md-3">
-                              <div className="info">
-                                  <div className="icon icon-danger">
-                                      <i className="nc-icon nc-app"></i>
-                                  </div>
-                                  <div className="description">
-                                      <h4 className="info-title">Templates</h4>
-                                      <p>We offer a library of with a wide range of templates to choose from.</p>
-                                      <a href="#pkp" className="btn btn-link btn-danger">See more</a>
                                   </div>
                               </div>
                           </div>
@@ -111,8 +97,18 @@ class App extends Component {
                                   </div>
                                   <div className="description">
                                       <h4 className="info-title">Proffesion-based CV</h4>
-                                      <p>We offer CV designs, templates, and suggestions based on your target profession, so that you may get that job you're striving for. </p>
-                                      <a href="#pkp" className="btn btn-link btn-danger">See more</a>
+                                      <p className="description">We offer CV designs, templates, and suggestions based on your target profession, so that you may get that job you're striving for. </p>
+                                  </div>
+                              </div>
+                          </div>
+                          <div className="col-md-3">
+                              <div className="info">
+                                  <div className="icon icon-danger">
+                                      <i className="nc-icon nc-app"></i>
+                                  </div>
+                                  <div className="description">
+                                      <h4 className="info-title">Templates</h4>
+                                      <p className="description">We offer a library with a wide range of resume templates to choose from.</p>
                                   </div>
                               </div>
                           </div>
@@ -123,8 +119,7 @@ class App extends Component {
                                   </div>
                                   <div className="description">
                                       <h4 className="info-title">CV Conversion</h4>
-                                      <p>We help to convert your original CV files to an online CV which is readily available for employers to view.</p>
-                                      <a href="#pkp" className="btn btn-link btn-danger">See more</a>
+                                      <p className="description">We help to convert your original CV files to an online CV which is readily available for employers to view.</p>
                                   </div>
                               </div>
                           </div>
