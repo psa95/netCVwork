@@ -12,53 +12,6 @@ import PrasadPic from './assets/img/prasadcopy.jpg'
 import axios from 'axios';
 
 class App extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         contact: { name: '',
-    //             email: '',
-    //             message: ''
-    //             }
-    //     };
-    //
-    //     this.handleChange = this.handleChange.bind(this);
-    //     this.handleSubmit = this.handleSubmit.bind(this);
-    // }
-    // handleChange (propertyName, event) {
-    //     const contact = this.state.contact;
-    //     contact[propertyName] = event.target.value;
-    //     this.setState({ contact: contact });
-    // }
-    //
-    // handleSubmit(event) {
-    //     alert('A name was submitted: ' + this.state.contact.name + 'email : ' + this.state.contact.email + 'message : ' + this.state.contact.message);
-    //     event.preventDefault();
-    // }
-    // handleSubmit(e){
-    //     e.preventDefault();
-    //     const name = document.getElementById('name').value;
-    //     const email = document.getElementById('email').value;
-    //     const message = document.getElementById('message').value;
-    //     axios({
-    //         method: "POST",
-    //         url:"http://localhost:8881/send",
-    //         data: {
-    //             name: name,
-    //             email: email,
-    //             message: message
-    //         }
-    //     }).then((response)=>{
-    //         if (response.data.msg === 'success'){
-    //             alert("Message Sent.");
-    //             this.resetForm()
-    //         }else if(response.data.msg === 'fail'){
-    //             alert("Message failed to send.")
-    //         }
-    //     })
-    // }
-    // resetForm(){
-    //     document.getElementById('contact-form').reset();
-    // }
   render() {
     return (
       <div className="App">
