@@ -3,8 +3,8 @@ const nodemailer = require("nodemailer")
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: 'netcvwork@gmail.com',
-    pass: 'Welcome@123'
+    user: process.env.ORIG_USER,
+    pass: process.env.ORIG_PASS
   }
 });
 
@@ -13,7 +13,7 @@ module.exports = {
     const from = name && email ? `${name} <${email}>` : `${name || email}`
     const message = {
       from,
-      to: 'netcvwork@gmail.com',
+      to: process.env.ORIG_USER,
       subject: `New message from ${from} (NetCVWork)`,
       text,
       replyTo: from
