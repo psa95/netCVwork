@@ -34,31 +34,31 @@ class App extends Component {
     //     alert('A name was submitted: ' + this.state.contact.name + 'email : ' + this.state.contact.email + 'message : ' + this.state.contact.message);
     //     event.preventDefault();
     // }
-    handleSubmit(e){
-        e.preventDefault();
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        axios({
-            method: "POST",
-            url:"http://localhost:8881/send",
-            data: {
-                name: name,
-                email: email,
-                message: message
-            }
-        }).then((response)=>{
-            if (response.data.msg === 'success'){
-                alert("Message Sent.");
-                this.resetForm()
-            }else if(response.data.msg === 'fail'){
-                alert("Message failed to send.")
-            }
-        })
-    }
-    resetForm(){
-        document.getElementById('contact-form').reset();
-    }
+    // handleSubmit(e){
+    //     e.preventDefault();
+    //     const name = document.getElementById('name').value;
+    //     const email = document.getElementById('email').value;
+    //     const message = document.getElementById('message').value;
+    //     axios({
+    //         method: "POST",
+    //         url:"http://localhost:8881/send",
+    //         data: {
+    //             name: name,
+    //             email: email,
+    //             message: message
+    //         }
+    //     }).then((response)=>{
+    //         if (response.data.msg === 'success'){
+    //             alert("Message Sent.");
+    //             this.resetForm()
+    //         }else if(response.data.msg === 'fail'){
+    //             alert("Message failed to send.")
+    //         }
+    //     })
+    // }
+    // resetForm(){
+    //     document.getElementById('contact-form').reset();
+    // }
   render() {
     return (
       <div className="App">
@@ -330,7 +330,7 @@ class App extends Component {
                       <div className="row">
                           <div className="col-md-8 ml-auto mr-auto">
                               <h2 className="text-center">Keep in touch?</h2>
-                              <form className="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
+                              <form className="contact-form" method="POST" action='/'>
                                   <div className="row">
                                       <div className="col-md-6">
                                           <label>Name</label>
@@ -338,7 +338,7 @@ class App extends Component {
 	                                        <span className="input-group-addon">
 	                                            <i className="nc-icon nc-single-02"></i>
 	                                        </span>
-                                              <input type="text" className="form-control" placeholder="Name" id="name"/>
+                                              <input type="text" className="form-control" placeholder="Name" id="name" name="name"/>
                                           </div>
                                       </div>
                                       <div className="col-md-6">
@@ -347,16 +347,30 @@ class App extends Component {
 											<span className="input-group-addon">
 												<i className="nc-icon nc-email-85"></i>
 											</span>
-                                              <input type="text" className="form-control" placeholder="Email" id="email"/>
+                                              <input type="email" name="email" className="form-control" placeholder="Email" id="email"/>
                                           </div>
                                       </div>
                                   </div>
                                   <label>Message</label>
-                                  <textarea className="form-control" rows="4" placeholder="Tell us your thoughts and feelings..." id="message"></textarea>
+                                  <textarea className="form-control" rows="4" placeholder="Tell us your thoughts and feelings..." name="message" id="message"></textarea>
                                   <div className="row">
                                       <div className="col-md-4 ml-auto mr-auto">
                                           <button type="submit" className="btn btn-danger btn-lg btn-fill">Send Message</button>
                                       </div>
+                                      { window.location.hash === '#success' &&
+                                      <div className="container" style={{paddingTop: 20}}>
+                                        <div id="success" className="alert alert-success mx-auto" role="alert">
+                                          <strong>Message Sent!</strong>
+                                        </div>
+                                      </div>
+                                      }
+                                      { window.location.hash === '#error' &&
+                                      <div className="container" style={{paddingTop: 20}}>
+                                        <div id="error" className="alert alert-danger mx-auto" role="alert" style={{paddingTop: 20}}>
+                                          <strong>Oops!</strong> An error occured while submitting the form. Please try again later.
+                                        </div>
+                                      </div>
+                                      }
                                   </div>
                               </form>
                           </div>
