@@ -1,7 +1,8 @@
 #!/bin/bash
 set -eu -o pipefail
 
-PROJECT_NAME="FinalProject"
+BACK_END="FinalProjectBackEnd"
+FRONT_END="FinalProjectFrontEnd"
 
 # Install build deps
 echo "Provisioning Virtual Machine"
@@ -25,14 +26,21 @@ cd /vagrant/
 
 # Link to guest system
 echo "Make Node Modules Directory - SymLinks"
-mkdir ~/node_modules_$PROJECT_NAME
-ln -s ~/node_modules_$PROJECT_NAME /vagrant/node_modules
+mkdir ~/node_modules_$FRONT_END
+mkdir ~/node_modules_$BACK_END
+ln -s ~/node_modules_$FRONT_END /vagrant/client/node_modules
+ln -s ~/node_modules_$BACK_END /vagrant/node_modules
 
-echo "Installing node dependencies..."
+echo "Installing node dependencies for backend..."
 npm install -g webpack gulp npm-check-updates bower
 npm install
 npm link
 # npm shrinkwrap --dev
+
+echo "Installing node dependencies for frontend..."
+cd client
+npm install
+npm link
 
 echo "Dos2Unix Install"
 sudo apt-get install -y dos2unix

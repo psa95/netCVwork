@@ -9,6 +9,7 @@ import Background from './assets/img/darkbackground.png'
 import Logo from './assets/img/netCVlogo.png'
 import SaarahPic from './assets/img/saarah.jpeg'
 import PrasadPic from './assets/img/prasadcopy.jpg'
+import axios from 'axios';
 
 class App extends Component {
   render() {
@@ -277,7 +278,7 @@ class App extends Component {
                       <div className="row">
                           <div className="col-md-8 ml-auto mr-auto">
                               <h2 className="text-center">Keep in touch?</h2>
-                              <form className="contact-form">
+                              <form className="contact-form" method="POST" action='/'>
                                   <div className="row">
                                       <div className="col-md-6">
                                           <label>Name</label>
@@ -285,7 +286,7 @@ class App extends Component {
 	                                        <span className="input-group-addon">
 	                                            <i className="nc-icon nc-single-02"></i>
 	                                        </span>
-                                              <input type="text" className="form-control" placeholder="Name"/>
+                                              <input type="text" className="form-control" placeholder="Name" id="name" name="name"/>
                                           </div>
                                       </div>
                                       <div className="col-md-6">
@@ -294,16 +295,30 @@ class App extends Component {
 											<span className="input-group-addon">
 												<i className="nc-icon nc-email-85"></i>
 											</span>
-                                              <input type="text" className="form-control" placeholder="Email"/>
+                                              <input type="email" name="email" className="form-control" placeholder="Email" id="email"/>
                                           </div>
                                       </div>
                                   </div>
                                   <label>Message</label>
-                                  <textarea className="form-control" rows="4" placeholder="Tell us your thoughts and feelings..."></textarea>
+                                  <textarea className="form-control" rows="4" placeholder="Tell us your thoughts and feelings..." name="message" id="message"></textarea>
                                   <div className="row">
                                       <div className="col-md-4 ml-auto mr-auto">
-                                          <button className="btn btn-danger btn-lg btn-fill">Send Message</button>
+                                          <button type="submit" className="btn btn-danger btn-lg btn-fill">Send Message</button>
                                       </div>
+                                      { window.location.hash === '#success' &&
+                                      <div className="container" style={{paddingTop: 20}}>
+                                        <div id="success" className="alert alert-success mx-auto" role="alert">
+                                          <strong>Message Sent!</strong>
+                                        </div>
+                                      </div>
+                                      }
+                                      { window.location.hash === '#error' &&
+                                      <div className="container" style={{paddingTop: 20}}>
+                                        <div id="error" className="alert alert-danger mx-auto" role="alert" style={{paddingTop: 20}}>
+                                          <strong>Oops!</strong> An error occured while submitting the form. Please try again later.
+                                        </div>
+                                      </div>
+                                      }
                                   </div>
                               </form>
                           </div>
