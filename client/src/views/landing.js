@@ -140,7 +140,7 @@ class Landing extends Component {
                       </div>
                       <br/><br/>
                       <div className="row">
-                          <div className="col-md-3">
+                          <div className="col-md-4">
                               <div className="info">
                                   <div className="icon icon-danger">
                                       <i className="nc-icon nc-glasses-2"></i>
@@ -151,18 +151,7 @@ class Landing extends Component {
                                   </div>
                               </div>
                           </div>
-                          <div className="col-md-3">
-                              <div className="info">
-                                  <div className="icon icon-danger">
-                                      <i className="nc-icon nc-touch-id"></i>
-                                  </div>
-                                  <div className="description">
-                                      <h4 className="info-title">Top Candidates</h4>
-                                      <p>Our interface allows you to sort candidates based on the number of hits they have recieved.</p>
-                                  </div>
-                              </div>
-                          </div>
-                          <div className="col-md-3">
+                          <div className="col-md-4">
                               <div className="info">
                                   <div className="icon icon-danger">
                                       <i className="nc-icon nc-tablet-2"></i>
@@ -173,7 +162,7 @@ class Landing extends Component {
                                   </div>
                               </div>
                           </div>
-                          <div className="col-md-3">
+                          <div className="col-md-4">
                               <div className="info">
                                   <div className="icon icon-danger">
                                       <i className="nc-icon nc-atom"></i>
