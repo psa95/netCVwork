@@ -134,58 +134,42 @@ class Landing extends Component {
                       <div className="row">
                           <div className="col-md-8 ml-auto mr-auto">
                               <h2 className="title">Employers</h2>
-                              <h5 className="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn't scroll to get here. Add a button if you want the user to see more.</h5>
+                              <h5 className="description">We aim to bring employers one step closer to finding the next perfect employee. To make this possible, we give you an easy to use environment with seamless navigation through a wide range of candidates and potential colleagues.</h5>
                               <br/>
-                                  <a href="#paper-kit" className="btn btn-danger btn-round">See Details</a>
                           </div>
                       </div>
                       <br/><br/>
                       <div className="row">
-                          <div className="col-md-3">
+                          <div className="col-md-4">
                               <div className="info">
                                   <div className="icon icon-danger">
-                                      <i className="nc-icon nc-album-2"></i>
+                                      <i className="nc-icon nc-glasses-2"></i>
                                   </div>
                                   <div className="description">
-                                      <h4 className="info-title">Beautiful Gallery</h4>
-                                      <p className="description">Spend your time generating new ideas. You don't have to think of implementing.</p>
-                                      <a href="#pkp" className="btn btn-link btn-danger">See more</a>
+                                      <h4 className="info-title">Profession-based Searches</h4>
+                                      <p className="description">We simplify the process of finding your next employee by linking the required skills to the profession.</p>
                                   </div>
                               </div>
                           </div>
-                          <div className="col-md-3">
+                          <div className="col-md-4">
                               <div className="info">
                                   <div className="icon icon-danger">
-                                      <i className="nc-icon nc-bulb-63"></i>
+                                      <i className="nc-icon nc-tablet-2"></i>
                                   </div>
                                   <div className="description">
-                                      <h4 className="info-title">New Ideas</h4>
-                                      <p>Larger, yet dramatically thinner. More powerful, but remarkably power efficient.</p>
-                                      <a href="#pkp" className="btn btn-link btn-danger">See more</a>
+                                      <h4 className="info-title">Profession-based Assesments</h4>
+                                      <p>Get candidates to take preconfigured tests for the position which they are being hired for.</p>
                                   </div>
                               </div>
                           </div>
-                          <div className="col-md-3">
+                          <div className="col-md-4">
                               <div className="info">
                                   <div className="icon icon-danger">
-                                      <i className="nc-icon nc-chart-bar-32"></i>
+                                      <i className="nc-icon nc-atom"></i>
                                   </div>
                                   <div className="description">
-                                      <h4 className="info-title">Statistics</h4>
-                                      <p>Choose from a veriety of many colors resembling sugar paper pastels.</p>
-                                      <a href="#pkp" className="btn btn-link btn-danger">See more</a>
-                                  </div>
-                              </div>
-                          </div>
-                          <div className="col-md-3">
-                              <div className="info">
-                                  <div className="icon icon-danger">
-                                      <i className="nc-icon nc-sun-fog-29"></i>
-                                  </div>
-                                  <div className="description">
-                                      <h4 className="info-title">Delightful design</h4>
-                                      <p>Find unique and handmade delightful designs related items directly from our sellers.</p>
-                                      <a href="#pkp" className="btn btn-link btn-danger">See more</a>
+                                      <h4 className="info-title">Highlights</h4>
+                                      <p>We highlight skills and achivements for each CV in order to simplify the hiring process.</p>
                                   </div>
                               </div>
                           </div>
@@ -326,19 +310,6 @@ class Landing extends Component {
                   </div>
               </div>
           </div>
-          <footer className="footer section-dark">
-              <div className="container">
-                  <div className="row">
-                      <nav className="footer-nav">
-                          <ul>
-                              <li><a href=""></a></li>
-                              <li><a href=""></a></li>
-                              <li><a href=""></a></li>
-                          </ul>
-                      </nav>
-                  </div>
-              </div>
-          </footer>
       </div>
     );
   }
