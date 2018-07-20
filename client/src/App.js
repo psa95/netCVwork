@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route, NavLink, Switch} from 'react-router-dom'
 import Landing from './views/landing'
 import Login from './views/login'
 import NotFound from './views/notFound'
+import Signup from "./views/signup";
 
 class App extends Component {
   render(){
@@ -14,6 +15,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Landing} />
               <Route path="/login" component={Login} />
+              <Route path="/signup" component={Signup} />
               <Route component={NotFound} />
             </Switch>
           </main>

@@ -178,86 +178,8 @@ class Landing extends Component {
                   </div>
               </div>
 
-              <div className="section text-center">
-                  <div className="container">
-                      <h2 className="title">Let's talk about us</h2>
-                      <div className="row">
-                          <div className="col-md-4">
-                              <div className="card card-profile card-plain">
-                                  <div className="card-avatar">
-                                      <a href="#avatar"><img src={ PrasadPic } alt="..."/></a>
-                                  </div>
-                                  <div className="card-body">
-                                      <a href="#paper-kit">
-                                          <div className="author">
-                                              <h4 className="card-title">Prasad Acharya</h4>
-                                              <h6 className="card-category">Developer</h6>
-                                          </div>
-                                      </a>
-                                      <p className="card-description text-center">
-                                          Teamwork is so important that it is virtually impossible for you to reach the heights of your capabilities or make the money that you want without becoming very good at it.
-                                      </p>
-                                  </div>
-                                  <div className="card-footer text-center">
-                                      <a href="#pablo" className="btn btn-link btn-just-icon btn-neutral"><i className="fa fa-twitter"></i></a>
-                                      <a href="#pablo" className="btn btn-link btn-just-icon btn-neutral"><i className="fa fa-google-plus"></i></a>
-                                      <a href="#pablo" className="btn btn-link btn-just-icon btn-neutral"><i className="fa fa-linkedin"></i></a>
-                                  </div>
-                              </div>
-                          </div>
 
-                          <div className="col-md-4">
-                              <div className="card card-profile card-plain">
-                                  <div className="card-avatar">
-                                      <a href="#avatar"><img src={ SaarahPic } alt="..."/></a>
-                                  </div>
-                                  <div className="card-body">
-                                      <a href="#paper-kit">
-                                          <div className="author">
-                                              <h4 className="card-title">Saarah Huda</h4>
-                                              <h6 className="card-category">Senior Developer</h6>
-                                          </div>
-                                      </a>
-                                      <p className="card-description text-center">
-                                          A group becomes a team when each member is sure enough of himself and his contribution to praise the skill of the others. No one can whistle a symphony. It takes an orchestra to play it.
-                                      </p>
-                                  </div>
-                                  <div className="card-footer text-center">
-                                      <a href="#pablo" className="btn btn-link btn-just-icon btn-neutral"><i className="fa fa-twitter"></i></a>
-                                      <a href="#pablo" className="btn btn-link btn-just-icon btn-neutral"><i className="fa fa-google-plus"></i></a>
-                                      <a href="#pablo" className="btn btn-link btn-just-icon btn-neutral"><i className="fa fa-linkedin"></i></a>
-                                  </div>
-                              </div>
-                          </div>
-
-                          <div className="col-md-4">
-                              <div className="card card-profile card-plain">
-                                  <div className="card-avatar">
-                                      <a href="#avatar"><img src="../assets/img/faces/erik-lucatero-2.jpg" alt="..."/></a>
-                                  </div>
-                                  <div className="card-body">
-                                      <a href="#paper-kit">
-                                          <div className="author">
-                                              <h4 className="card-title">Abdullah Dindi</h4>
-                                              <h6 className="card-category">Developer</h6>
-                                          </div>
-                                      </a>
-                                      <p className="card-description text-center">
-                                          The strength of the team is each individual member. The strength of each member is the team. If you can laugh together, you can work together, silence isn’t golden, it’s deadly.
-                                      </p>
-                                  </div>
-                                  <div className="card-footer text-center">
-                                      <a href="#pablo" className="btn btn-link btn-just-icon btn-neutral"><i className="fa fa-twitter"></i></a>
-                                      <a href="#pablo" className="btn btn-link btn-just-icon btn-neutral"><i className="fa fa-google-plus"></i></a>
-                                      <a href="#pablo" className="btn btn-link btn-just-icon btn-neutral"><i className="fa fa-linkedin"></i></a>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-
-              <div className="section section-dark landing-section">
+              <div className="section  landing-section">
                   <div className="container">
                       <div className="row">
                           <div className="col-md-8 ml-auto mr-auto">
