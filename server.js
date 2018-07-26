@@ -23,16 +23,16 @@ const PORT = process.env.PORT || 8882;
 
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}!`);
-})
+});
 
 mongoose.connect(dburl, {useNewUrlParser: true});
 mongoose.connection.once('open',function(){
     console.log("Connected to MongoDB");
-})
+});
 
-app.get('*', (req, res) => {
-  res.send('Server is working. Please post at "/" to submit a message.')
-})
+// app.get('*', (req, res) => {
+//   res.send('Server is working. Please post at "/" to submit a message.')
+// });
 
 app.post('/', (req, res) => {
   const { email = '', name = '', message = '' } = req.body
@@ -44,4 +44,4 @@ app.post('/', (req, res) => {
     console.log(`Failed to send the message "${message}" from <${name}> ${email} with the error ${error && error.message}`);
     res.redirect('#error');
   })
-})
+});
