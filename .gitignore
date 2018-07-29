@@ -4,7 +4,10 @@ npm-debug.log
 
 # Vagrant Files
 .vagrant
+vagrant
+Vagrantfile
 ubuntu*
+.env
 
 # Webstorm
 .idea

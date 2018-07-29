@@ -3,18 +3,20 @@ let bodyParser = require("body-parser");
 let mongoose = require("mongoose");
 let path = require("path");
 var mailer = require("./mail/mailer");
+var keys = require('./config/keys');
 
 const app = express()
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-let Schema = mongoose.Schema;
-let userDetailsModel = mongoose.model('details', new Schema({
-    name: String,
-    username: String,
-    password: String
-}, {collection: 'details'}))
-const dburl = process.env.MONGODB_URI;
+// let Schema = mongoose.Schema;
+// let userDetailsModel = mongoose.model('userDetails', new Schema({
+//     name: String,
+//     username: String,
+//     password: String
+// }, {collection: 'userDetails'}))
+
+const dburl = process.env.MONGODB_URI || keys.mongoURI;
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
@@ -25,14 +27,14 @@ app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}!`);
 });
 
-mongoose.connect(dburl, {useNewUrlParser: true});
-mongoose.connection.once('open',function(){
-    console.log("Connected to MongoDB");
-});
+mongoose
+.connect(dburl, {useNewUrlParser: true})
+.then(() => console.log('MongoDB Connected'))
+.catch(err => console.log(err));
 
-// app.get('*', (req, res) => {
-//   res.send('Server is working. Please post at "/" to submit a message.')
-// });
+app.get('*', (req, res) => {
+  res.send('Server is working. Please post at "/" to submit a message.')
+});
 
 app.post('/', (req, res) => {
   const { email = '', name = '', message = '' } = req.body
