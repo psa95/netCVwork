@@ -7,6 +7,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Quickstart
 
+## VAGRANT DISABLED
+
 netCVwork requires [Vagrant](https://www.vagrantup.com/downloads.html) v2+ and [Virtual Box](https://www.virtualbox.org/wiki/Downloads) to run.
 
 Tbhe following setup is used to create the development environment.
@@ -27,15 +29,39 @@ $ vagrant up
 ***Note (Windows Users):*** Please run all commands pertaining to ***_Vagrant_*** in a Powershell window (with Administrator Privileges) to avoid any issues.
 
 The above command will create a new virtual instance for the application, and install all required system and node dependencies.
-Once the setup is done, we need to connect to the Vagrant server, navigate to the project, and start it.
+Once the setup is done, we need to startup our MongoDB service within the Vagrant Server.
 
 ```sh
 $ vagrant ssh
-$ cd /vagrant/
-$ npm run-script start-local
+$ sudo mongod
+```
+Now, we need to build our React frontend in a ***new command window***.
+
+```sh
+$ vagrant ssh
+$ cd /vagrant/client
+$ npm run-script build
 ```
 
-Once `npm run-script start-local` is run and the server is started, on the host PC you can navigate to `localhost:8881` to find the web application.
+Next, navigate to the main project, and start it.
+
+```sh
+$ cd /vagrant/
+$ npm run-script server
+```
+
+Once `npm run-script server` is run and the server is started, on the host PC you can navigate to `localhost:8882` to find the web application.
+
+## Quickstart
+
+Install all dependencies by typing the following in a terminal window:
+```sh
+$ npm install
+$ cd client
+$ npm run-script build
+$ cd..
+$ npm run-script server
+```
 
 ## Git
 
