@@ -4,7 +4,7 @@
   "description": "NetCVWork WebApp",
   "main": "index.js",
   "scripts": {
-    "server": "node server.js",
+    "server": "nodemon server.js",
     "heroku-postbuild": "cd client/ && npm install && npm run build"
   },
   "repository": {
@@ -18,10 +18,16 @@
   },
   "homepage": "https://github.com/psa95/netCVwork#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "mongoose": "^5.2.3",
     "nodemailer": "^4.6.7",
-    "path": "^0.12.7"
+    "gravatar": "^1.6.0",
+    "jsonwebtoken": "^8.3.0",
+    "nodemon": "^1.18.3",
+    "path": "^0.12.7",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0"
   }
 }
