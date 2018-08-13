@@ -9,11 +9,13 @@ class Signup extends Component {
                 <br/>
                 <br/>
                 <div align="center">
-                    <form method="POST" action="/add-user">
+                    <form method="POST" action="users/register">
                         <label>Name : </label>
                         <input type="text" name="name"/><br/>
                         <label>Username : </label>
                         <input type="text" name="username"/><br/>
+                        <label>Email : </label>
+                        <input type="text" name="email"/><br/>
                         <label>Password : </label>
                         <input type="password" name="password"/><br/>
                         <button type="submit">Sign Up</button>
