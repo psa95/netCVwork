@@ -2,21 +2,21 @@ let express = require("express");
 let bodyParser = require("body-parser");
 let mongoose = require("mongoose");
 let path = require("path");
-var mailer = require("./mail/mailer");
-var keys = require('./config/keys');
-
+const passport = require('passport');
+const mailer = require("./mail/mailer");
+const keys = require('./config/keys');
+const users = require('./routes/users');
 const app = express()
+
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-// let Schema = mongoose.Schema;
-// let userDetailsModel = mongoose.model('userDetails', new Schema({
-//     name: String,
-//     username: String,
-//     password: String
-// }, {collection: 'userDetails'}))
+app.use(passport.initialize());
 
-const dburl = process.env.MONGODB_URI || keys.mongoURI;
+require('./config/passport')(passport);
+
+const dburl = keys.mongoURI;
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
@@ -31,6 +31,10 @@ mongoose
 .connect(dburl, {useNewUrlParser: true})
 .then(() => console.log('MongoDB Connected'))
 .catch(err => console.log(err));
+
+app.get('/', (req,res) => res.json({msg:"this is NetCVwork"}));
+app.get('/dashboard', passport.authenticate('jwt', {session:false}),(req,res)=> res.json({msg:"This is a private dashboard"}))
+app.use('/users', users);
 
 app.get('*', (req, res) => {
   res.send('Server is working. Please post at "/" to submit a message.')

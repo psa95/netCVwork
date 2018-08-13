@@ -9,9 +9,9 @@ class Login extends Component {
           <br/>
           <br/>
           <div align="center">
-            <form method="POST" action="/check-login">
-              <label>Username : </label>
-              <input name="username" type="text"/><br/>
+            <form method="POST" action="users/login">
+              <label>Email : </label>
+              <input name="email" type="text"/><br/>
               <label>Password : </label>
               <input name="password" type="password"/><br/>
               <button type="submit">Log In</button>
