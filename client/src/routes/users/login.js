@@ -1,40 +1,47 @@
 import React, { Component } from 'react';
 import Layout from '../../components/Layout';
+import { Redirect } from 'react-router-dom';
 import { loginRequest } from '../../helpers/network';
-import { Redirect } from 'react-router-dom'
+import { saveUser } from '../../helpers/authentication';
 class Login extends Component {
   state = {
-    loginSuccess: false,
-    error: false
+    error: null,
+    loggedin: null
   }
   updateVal = (e) => {
     this.setState({[e.target.name]: e.target.value})
   }
   submitForm = async(e) => {
     e.preventDefault();
+    this.setState({
+      error: null
+    })
     try {
-      const response = await loginRequest(this.state.email,this.state.password);
-      console.log(response);
-      this.setState ({
-        loginSuccess: response.success,
-        error: false
-      });
-      localStorage.setItem("token",response.token);
-      localStorage.setItem("name",response.name);
-
-    } catch(e) { 
-      this.setState ({
+      let response = await loginRequest({email: this.state.email, password: this.state.password});
+      saveUser(response);
+      this.setState({
+        loggedin: true
+      })
+    }catch (e){
+      this.setState({
         error: e.email
-      });
-      console.log(e);
+      })
     }
-    console.log(this.state.email);
-    console.log(this.state.password);
   }
   render(){
     return (<Layout>
-      {this.state.error && <ErrorBox msg={this.state.error}/>}
-      {this.state.loginSuccess && <Redirect to="/users/"/>}
+      {this.state.loggedin ? <Redirect to="/users/"/> : null}
+      <div className="row">
+        <div className="col">
+          <h1 className="heading">Please Login</h1>
+        </div>
+      </div>
+
+      {this.state.error ?
+        <div className="alert alert-danger" role="alert">
+          {this.state.error}
+        </div>
+      : null }
       <form onSubmit={this.submitForm}>
       <div className="form-group">
         <label htmlFor="exampleInputEmail1">Email address</label>
@@ -51,9 +58,3 @@ class Login extends Component {
   }
 }
 export default Login;
-
-const ErrorBox = (props) => {
-  return <div className="alert alert-danger" role="alert">
-    {props.msg}
-  </div>
-}
