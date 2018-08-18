@@ -53,7 +53,7 @@ class Login extends Component {
         <input name="password" onChange={this.updateVal} type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
       </div>
       <button type="submit" className="btn btn-primary">Login</button>
-      <Link to="/signup">Not yet Registered ?</Link>
+      <Link style={{position:'absolute', right: 212}} to="/signup">Not yet Registered ?</Link>
     </form>
     </Layout>)
   }

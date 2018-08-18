@@ -17,7 +17,7 @@ class Header extends Component {
             <Menu.Item
               as={NavLink}
               to="/users/"
-              name='users'
+              name='Dashboard'
             />
             {isLoggedIn() ?
               <Menu.Menu position="right">
