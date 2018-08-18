@@ -24,7 +24,7 @@ const UserSchema = new Schema ({
         required: true
     },
     interested_areas: {
-        type: [String],
+        type: [String]
     },
     avatar: {
         type: String

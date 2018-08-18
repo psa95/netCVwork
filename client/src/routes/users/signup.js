@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Layout from '../../components/Layout';
 import { signupRequest } from '../../helpers/network';
-import { Form, Header } from 'semantic-ui-react';
+import { Form, Header, Button} from 'semantic-ui-react';
 
 const userType = [
     { key: 'job', text: 'Job Seeker', value: 'job seeker' },
@@ -26,8 +26,12 @@ class Signup extends Component {
     passwordMatchError: false,
     signedup: false
   }
-  updateVal = (e) => {
-    this.setState({[e.target.name]: e.target.value})
+  updateVal = (e, {name, value }) => {
+    this.setState({[name] :  value})
+    console.log(value);
+  }
+  updateDropdown = (e) => {
+    console.log(e.target)
   }
   submitForm = async(e) => {
     e.preventDefault();
@@ -35,17 +39,19 @@ class Signup extends Component {
       error: null
     })
     try {
-        if(!(this.state.password === this.state.confirmPassword)){
-            this.setState({
-                passwordMatchError:true
-            })
-            e.email = 'Passwords dont match'
-            throw(e)
-        } else{
-            this.setState({
-                passwordMatchError:false
-            })
-        }
+        // if(!(this.state.password === this.state.confirmPassword)){
+        //     this.setState({
+        //         passwordMatchError:true
+        //     })
+        //     e.email = 'Passwords dont match'
+        //     throw(e)
+        // } else{
+        //     this.setState({
+        //         passwordMatchError:false
+        //     })
+        // }
+        console.log(this.state.type)
+        console.log(this.state.occupation)
         let response = await signupRequest({name: this.state.name, email: this.state.email, password: this.state.password, type: this.state.type, occupation: this.state.occupation, interested_areas: this.state.interested_areas});
         console.log(response)
         this.setState({
@@ -63,20 +69,20 @@ class Signup extends Component {
       <Form onSubmit={this.submitForm}>
         <Form.Input label='Full name' placeholder='John Luke' name='name' onChange={this.updateVal} fluid required />
         <Form.Input label='Email' placeholder='johnny@abc.com' name='email' type='email' onChange={this.updateVal}  fluid required />
-        <Form.Select label='Type of user' options={userType} placeholder='Select' name='type' onChange={this.updateVal} fluid required />
+        <Form.Select label='Type of user' options={userType} placeholder='Select' name='type' value={userType.value} onChange={this.updateVal} fluid required />
         <Form.Select label='Current Occupation' options={occupations} placeholder='Select' name='occupation' onChange={this.updateVal} fluid required />
         <Form.Select label='Interested Fields' options={interestedFilelds} name='interested_areas' onChange={this.updateVal} fluid />
         <Form.Input label='Password' type='password' name='password' onChange={this.updateVal} error={this.state.passwordMatchError} fluid required />
         <Form.Input label='Confirm Password' type='password' name='confirmPassword'  onChange={this.updateVal} error={this.state.passwordMatchError} fluid required />
         <Form.Checkbox label='I agree to the Terms and Conditions' />
-        <Form.Button>Signup</Form.Button>
+        <Button type='submit'>Signup</Button>
       </Form>
 
-      {/* {this.state.error ?
+      {this.state.error ?
         <div className="alert alert-danger" role="alert">
           {this.state.error}
         </div>
-      : null } */}
+      : null }
 
 
     </Layout>)

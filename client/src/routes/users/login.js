@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Layout from '../../components/Layout';
-import { Redirect } from 'react-router-dom';
+import { Redirect,Link } from 'react-router-dom';
 import { loginRequest } from '../../helpers/network';
 import { saveUser } from '../../helpers/authentication';
 class Login extends Component {
@@ -53,6 +53,7 @@ class Login extends Component {
         <input name="password" onChange={this.updateVal} type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
       </div>
       <button type="submit" className="btn btn-primary">Login</button>
+      <Link to="/signup">Not yet Registered ?</Link>
     </form>
     </Layout>)
   }
