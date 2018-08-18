@@ -4,11 +4,10 @@ import Login from './login';
 import { isLoggedIn } from '../../helpers/authentication';
 import Dashboard from '../dashboard';
 
-class App extends Component {
+class Users extends Component {
   render() {
     return (
       <Switch>
-        <Route path="/login" component={Login} />
         <Route path="" render={
           (props) => {
             if (isLoggedIn()){
@@ -16,10 +15,10 @@ class App extends Component {
             }
             return <Login />
           }
-        }/>
+        }/>    
       </Switch>
     );
   }
 }
 
-export default App;
+export default Users;
