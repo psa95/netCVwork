@@ -8,8 +8,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faInstagram, faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons'
 import Background from '../assets/img/darkbackground.png'
 import Logo from '../assets/img/netCVlogo.png'
-import SaarahPic from '../assets/img/saarah.jpeg'
-import PrasadPic from '../assets/img/prasadcopy.jpg'
 
 class Landing extends Component {
   render() {

@@ -22,6 +22,32 @@ function loginRequest({email, password}){
   });
 }
 
+function signupRequest({name, email, password, type, occupation, interested_areas}){
+  return new Promise((resolve, reject) => {
+    fetch("http://localhost:8882/users/register", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        password,
+        type,
+        occupation,
+        interested_areas,
+      })
+    }).then(response => {
+      response.json().then(json => {
+        if (!response.ok){
+          return reject(json);
+        }
+        resolve(json);
+      }).catch(e => reject(e));
+    }).catch(e => reject(e))
+  });
+}
+
 function getDashboard(){
   return new Promise((resolve, reject) => {
     fetch("http://localhost:8882/dashboard", {
@@ -42,5 +68,6 @@ function getDashboard(){
 
 export {
   loginRequest,
+  signupRequest,
   getDashboard
 }

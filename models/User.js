@@ -7,10 +7,6 @@ const UserSchema = new Schema ({
         type: String,
         required: true
     },
-    username: {
-        type: String,
-        required: false
-    },
     email: {
         type: String,
         required:true
@@ -18,6 +14,17 @@ const UserSchema = new Schema ({
     password: {
         type: String,
         required: true
+    },
+    type: {
+        type: String,
+        required: true
+    },
+    occupation: {
+        type: String,
+        required: true
+    },
+    interested_areas: {
+        type: [String],
     },
     avatar: {
         type: String

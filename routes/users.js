@@ -24,8 +24,10 @@ User.findOne({ email: req.body.email})
 
         const newUser = new User({
             name: req.body.name,
-            username: req.body.username,
             email: req.body.email,
+            type: req.body.type,
+            occupation: req.body.occupation,
+            interested_areas: req.body.interested_areas,
             avatar: avatar
         });
 
@@ -64,7 +66,8 @@ router.post('/login', (req,res) => {
                           res.json({
                             success: true,
                             token: 'Bearer ' + token,
-                            name: user.name
+                            name: user.name,
+                            type: user.type
                           });
                         }
                       );
