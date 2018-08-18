@@ -3,35 +3,20 @@ import Layout from '../../components/Layout';
 import { Redirect } from 'react-router-dom';
 import { getDashboard } from '../../helpers/network';
 import { userLogout } from '../../helpers/authentication';
+import { Header, Tab } from 'semantic-ui-react';
+import Home from '../tabs/home';
 
-const Row = (props) => {
-  return <tr>
-    <th scope="row">{props.row.name}</th>
-    <td>{props.row.profession}</td>
-    <td>{props.row.location}</td>
-  </tr>
-}
 const Loading = (props) => {
   return <div className="alert alert-info" role="alert">
     Logging In Please Wait
   </div>
 }
-const Table = (props) => {
-  return <div>
-    <table className="table">
-      <thead>
-        <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Profession</th>
-          <th scope="col">Location</th>
-        </tr>
-      </thead>
-      <tbody>
-        {props.data ? props.data.map(row => <Row key={row.name} row={row} />) : null}
-      </tbody>
-    </table>
-  </div>
-}
+const panes = [
+  { menuItem: 'Home', render: () => <Tab.Pane attached={false}><Home/></Tab.Pane> },
+  { menuItem: 'CV Design', render: () => <Tab.Pane attached={false}>Tab 2 Content</Tab.Pane> },
+  { menuItem: 'Share CV', render: () => <Tab.Pane attached={false}>Tab 3 Content</Tab.Pane> },
+  { menuItem: 'Recommended Skills', render: () => <Tab.Pane attached={false}>Tab 3 Content</Tab.Pane>}
+]
 class Dashboard extends Component {
   state = {
     authenticated: false,
@@ -42,7 +27,6 @@ class Dashboard extends Component {
     try {
       const response = await getDashboard();
       this.setState({
-        data: response,
         authenticated: true
       });
     }catch(e){
@@ -56,8 +40,8 @@ class Dashboard extends Component {
   render() {
     return (
       <Layout>
-        {this.state.authenticated === false && this.state.error === true ? <Redirect to="/users/login" /> : null}
-        {this.state.authenticated === false && this.state.error === false ? <Loading /> : <Table data={this.state.data}/>}
+        <Tab menu={{ pointing: true }} panes={panes} />
+        
       </Layout>
     );
   }

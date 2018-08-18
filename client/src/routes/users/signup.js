@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Layout from '../../components/Layout';
 import { signupRequest } from '../../helpers/network';
 import { Form, Header, Button} from 'semantic-ui-react';
+import { Redirect } from 'react-router-dom'
 
 const userType = [
     { key: 'job', text: 'Job Seeker', value: 'job seeker' },
@@ -65,6 +66,7 @@ class Signup extends Component {
   }
   render(){
     return (<Layout>
+      {this.signedup? <Redirect to='users/login'/>:null}
       <Header as='h1'>SignUp</Header>
       <Form onSubmit={this.submitForm}>
         <Form.Input label='Full name' placeholder='John Luke' name='name' onChange={this.updateVal} fluid required />
@@ -77,7 +79,8 @@ class Signup extends Component {
         <Form.Checkbox label='I agree to the Terms and Conditions' />
         <Button type='submit'>Signup</Button>
       </Form>
-
+      <br/>
+      <br/>
       {this.state.error ?
         <div className="alert alert-danger" role="alert">
           {this.state.error}
